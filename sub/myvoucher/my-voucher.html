@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的代金券</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <style>
+    	.pic-list{ width: 90px; margin-bottom: 0;padding: 0;}
+        .pic-list .pic-cell-mask{padding: 0;margin-top: -20px;height: 20px;}
+        .pic-list .pic-cell-mask label{text-align: center; display: inline-block; width: 100%; overflow: hidden;}
+        .p-split{margin: 12px auto;}
+        .tongbu{width:20px !important;height: 20px !important; margin-right: 0 !important;}
+        .address-body{position: relative;}
+        .flag-status {position: absolute; top:30px; right: 30px; width: 68px;}
+        
+        #cardCode{ max-width: 80%; width: 300px;padding:10px; height:280px;border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px; background: #FFFFFF;}
+       
+    	#cardCode .row a{display: inline-block;}
+    	#cardCode .img-second img{ width: 145px;height: 145px; margin: auto;}
+    	#cardCode .img-active img{ width: 100%;height: 84px;}
+    	
+    	#deleteMerday{padding: 10px; height: 100px;}
+    	#deleteMerday .btn{padding-top: 4px;padding-bottom: 4px; font-size: 12px;}
+    </style>
+</head>
+<body>
+<div id="" class="tab-border head-height">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">我的代金券</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+   
+    <div class="row replaceSearch btn-tab" >
+    	<h1 class="col-sm-12">
+    		<div id="controlTab">
+    			<a href="#item1" class="tab-item tab-item-active col-sm-4">未使用</a>
+    			<a href="#item2" class="tab-item col-sm-4">已使用</a>
+    			<a href="#item3" class="tab-item col-sm-4">已过期</a>
+    		</div>
+    	</h1>
+    	
+    </div>
+   
+    <!-- form start-->
+    <form action="#" name="" id="" >
+    <div>
+      <div id="item1" class="tab-content" style="">
+      	<div class="address-list">
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller  btn-red">停车券</span><img class="text-danger pull-right tongbu" src="../../img/is_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_use.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller  btn-red">现金券</span><img class="text-danger pull-right tongbu" src="../../img/is_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_use.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller  btn-red">领物券</span><img class="text-danger pull-right tongbu" src="../../img/is_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_use.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller  btn-red">停车券</span><img class="text-danger pull-right tongbu" src="../../img/is_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_use.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		
+   
+    	</div>
+    	<p class="text-center smaller text-warning">没有更多代金券</p>
+      </div>
+      
+      
+      <div id="item2" class="tab-content">
+         	<div class="address-list">
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller btn-gray">停车券</span><img class="text-danger pull-right tongbu" src="../../img/no_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode btn-gray">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_used.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		
+   
+    	</div>
+    	<p class="text-center smaller text-warning">没有更多代金券</p>
+       </div>
+       
+       <div id="item3" class="tab-content" style="">
+       	<div class="address-list">
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small">
+ 
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-4">
+       		              <div class="pic-list">
+    		                 <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		                 <div class="pic-cell-mask">
+    			                  <label class="smaller text-ellipsis text-center">所属商业项目所属商业项目所属商业项目所属商业项目</label>
+    		                 </div>
+    	                  </div>
+       		            </div>
+       		            <div class="media-body col-sm-8 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">优惠券名称<span class="flag-rel btn btn-smaller btn-gray">停车券</span><img class="text-danger pull-right tongbu" src="../../img/no_refresh_icon.png" /></div>
+       			            <div class="row text-ellipsis smaller p-split">有效期:<span>2017/12/12</span>-<span>2019/12/12</span></div>
+       			            <button class="btn btn-small btn-primary btn-smaller btn-userCode btn-gray">立即使用</button>
+       		            </div>
+       	              </li>
+                    </ul>
+    				<img class="flag-status" src="../../img/v_overdue.png" />
+    			</div>
+    			<div class="row address-footer">
+    				 <div class="col-sm-11 text-ellipsis text-warning">
+    				     卡说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+    			     </div>
+    				 <span class="pull-right v-slide-down">
+                         <img src="../../img/v_slide_down.png" datasrc="../../img/activity_slidedown_icon.png"/>
+    				 </span>
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		
+   
+    	</div>
+       	
+      	  <div class="row no-data text-center">
+    	     <div class="row no-data-icon"><img src="../../img/no_data_icon.png" alt="没有券" /></div>
+    	     <p class="h5 text-warning">您还没有已过期的代金券</p>
+          </div>
+      </div>
+     
+       
+       <!-- box end-->
+       
+      </div>
+    
+    </form>
+    <!-- form end-->
+</div>
+
+<div id="mask" class="cl"></div>
+<!-- 使用二维码 -->
+<div id="cardCode" class="cl">
+	
+	<div class="cl" style="margin-bottom: 10px;">
+		<a href="#" class="card-code-img img-active cl"><img src="../../img/two_code_1.png" /></a>
+	</div>
+	<div class="row text-center">
+		<a href="#" class="card-code-img img-second" ><img src="../../img/two_code_2.png"  /></a>
+	</div>
+    <p class="text-center">券码：<span>321&nbsp;155&nbsp;321&nbsp;155</span></p>
+</div>
+
+<div id="deleteMerday" class="cl">
+    <h4 class="row text-center small">是否确定将代金券同步到微信</h4>
+    <div class="row text-center" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-primary btn-smaller pull-left deletebtn" style="width:60px;">确定</a>
+         <a href="#" class="btn btn-smaller pull-right canclebtn" style="width:60px;">取消</a>
+    </div>
+</div>
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+
+ <script>
+ 	$(function(){
+        $("#controlTab").tab({
+			tabItem:".tab-item",
+			tabContent:".tab-content"
+		});
+		//收藏
+		$(".click-like").each(function(){
+			$(this).on("click",function(e){
+				e.preventDefault();
+				var $dataSrc=$(this).attr("datasrc");
+				$(this).attr({"datasrc":$(this).attr("src"),"src":$dataSrc});
+			});
+		});
+		
+		
+		var screenHeight=document.body.scrollHeight;//屏幕的高度
+		var actHeight=screenHeight-$(".nav").outerHeight()-$(".spt-search").outerHeight();
+		$("#minmask").css({"height":actHeight+'px',"top":$(".nav").outerHeight()-$(".spt-search").outerHeight()+'px'});
+		
+		$(".slide-floor").getSlide({
+			slideFloor:".slide-floor",//外包
+			slideFloorView:".slide-floor-view",//楼层业态外包
+			slideFloorList:".slide-floor-list",//对应内容父级
+			slideCell:".slide-cell",//楼层业态分别对应
+			mask:"#minmask"
+		});
+		
+		  
+	    $(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			$("#cardCode").modal({
+				    maskName:"#mask",
+				    targetObject:"#cardCode",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true
+	        });
+	        $("#cardCode").css({"height":$("#cardCode").outerHeight()+'px'});
+	          
+	        $("#cardCode").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();
+ 		    });
+ 		    $("#mask").click(function(){
+ 		    	$("#controlTab").tab({
+			      tabItem:".tab-item",
+			      tabContent:".tab-content"
+		        });
+ 		    });
+ 		    
+		});
+		
+		
+		$("#deleteMerday").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+	    });
+	  
+	   $(".tongbu").on("click",function(e){
+			e.preventDefault();
+			var $thisparent=$(this).closest(".address-list-cell");
+			
+			$("#deleteMerday").modal({
+				maskName:"#mask",
+				targetObject:"#deleteMerday",
+				maskShadow:true,
+				actionBottom:false,
+				actionCenter:true
+			});
+			$(".deletebtn").on("click",function(e){
+		        e.preventDefault();
+		        e.stopPropagation();
+		        $("#mask").click();
+		        
+	       });
+	       $(".canclebtn").on("click",function(e){
+	       	    e.preventDefault();
+	       	    $("#mask").click();
+	       	 
+	       });
+	       $("#mask").click(function(){
+ 		    	$("#controlTab").tab({
+			      tabItem:".tab-item",
+			      tabContent:".tab-content"
+		        });
+ 		    });
+ 		    
+	      
+
+	   });
+	   
+	   /*下拉说明*/
+	   $(".v-slide-down").on("click",function(e){
+	   	  e.preventDefault();
+	   	  var $datasrc=$(this).children("img").attr("datasrc");
+          var $src=$(this).children("img").attr("src");
+          
+	   	  var $par=$(this).closest(".address-footer");
+	   	  if($(this).hasClass("down-active")){
+	   	  	 $par.children(".text-warning").addClass("text-ellipsis");
+	   	  	 $(this).removeClass("down-active").children("img").attr({"src":$datasrc,"datasrc":$src});
+	   	  	 
+	   	  }else{
+	   	  	 $par.children(".text-warning").removeClass("text-ellipsis");
+	   	  	 $(this).addClass("down-active").children("img").attr({"src":$datasrc,"datasrc":$src});
+	   	  }
+	   });
+		
+ 	})
+ </script>
+ 
+	
+</body>
+</html>

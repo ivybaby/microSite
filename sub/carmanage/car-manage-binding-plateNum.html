@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>绑定车牌</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">绑定车牌</h1>
+        <a href="javascript:history.go(-1)" class="nav-right text-white">保存</a>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+         <!--form-group start -->
+        <div class="form-group">
+            
+         
+            
+            <!--input-group start -->
+            <div class="input-group row" id="showCityPicker3">
+                <div class="col-sm-3">
+                    <label>所在地区</label>
+                </div>
+                <div class="col-sm-7" style="height: 48px;padding: 12px 15px 0 5px;">
+                    <em class="text-warning" style="display: inline-block;" id="cityResult3"></em>
+                </div>
+                 <img src="../../img/more_icon.png" class="pull-right" style="width: 14px;margin: 12px 15px 0 0;" />
+            </div>
+            <!--input-group end -->
+            
+              
+            <!--input-group start -->
+            <div class="input-group row" >
+                <div class="col-sm-3">
+                    <label>车牌号码</label>
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" placeholder="" class="input text-warning" max="11" value="" />
+                </div>
+        
+            </div>
+            <!--input-group end -->
+           
+        </div>
+        
+    </form>
+     <!--form-group start -->
+      
+    
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+<script src="../../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+ <script>
+ 	$(function(){
+        $(".edit-box .edit-group .edit-icon").on("click",function(e){
+        	$(this).closest(".edit-group").children(".edit-input").val("");
+        });
+       
+      
+ 	})
+ </script>
+ <script>
+			//选择性别
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					
+					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					var cityResult3 = doc.getElementById('cityResult3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.innerText = (items[0] || {}).text + (items[1] || {}).text + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+				});
+			})(mui, document);
+			
+</script>
+</body>
+</html>

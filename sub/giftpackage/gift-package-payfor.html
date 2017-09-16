@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>确认订单</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    
+    <link rel="stylesheet" href="../../css/idangerous.swiper.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+ 
+</head>
+<body>
+<div id="packPayIndex">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">确认订单</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+    
+    
+    <!-- form start-->
+    <form action="#" name="" id="" >
+       
+      	<div class="address-list">
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small media-add-btn">
+                
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-3">
+       		              <img src="../../img/media_1.jpg" alt="media_list_photo" class="btn-userCode"/>
+       		            </div>
+       		            <div class="media-body col-sm-9 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">包装盒名称</div>
+       			            <div class="inner-nbsp smaller media-height">
+       				               <label style="margin-right: 7px;">包装盒说明：<em>大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋</em></label>
+       			            </div>
+       			            <div class="row smaller cl">
+       			            	<span class="text-danger h4 pull-left line-30 singleNum" >￥25</span>
+       			            	<div class="set-num cl pull-right text-center" datasrc="#num1" data-href=".singleNum">
+    					            <button class="pull-left addition">+</button>
+    				                <input type="number" class="pull-left" value="1" />
+    					            <button class="pull-left substraction">-</button>
+    				            </div>
+    				            <span class="pull-right text-default line-30">数量：</span>
+       			            </div>
+       		            </div>
+       	              </li>
+                    </ul>
+    				
+    			</div>
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    
+    	</div>
+     
+       <!-- box end-->
+       <div class="row gift-pay small">
+       	  <ul>
+       	   	  <li class="text-danger">支付金额:&nbsp;<span id="num1">￥25.00</span></li>
+       	   </ul>
+       </div>
+       
+       <div class="row gift-pay small">
+       	   <h4 class="row-padding">支付方式</h4>
+       	   <ul class="gift-pau-way">
+       	   	  <li>
+       	   	  	<div class="address-is cl" >
+    				<img src="../../img/address_select_icon_nor.png" />
+    				<em class="address-text">积分抵扣</em>
+    				
+    				<span class="pull-right text-danger singleNum-1" style="font-size: 17px; display: none;" id="num2">￥0.10</span>
+    				<div class="set-num cl pull-right" style="padding-top: 5px; display: none;" datasrc="#num2" data-href=".singleNum-1" data-change="#num1">
+    					<button class="pull-left addition">+</button>
+    				    <input type="number" class="pull-left" value="1"/>
+    					<button class="pull-left substraction">-</button>
+    				</div>
+    			</div>
+       	   	  </li>
+       	   	  <li>
+       	   	  	<div class="address-is cl">
+    				<img src="../../img/address_select_icon_nor.png" />
+    				<em class="address-text">微信支付</em>
+    			</div>
+       	   	  </li>
+       	   </ul>
+       </div>
+       
+        
+    </form>
+    <!-- form end-->
+     <div class="bottom-bar bottom-bar-tab bottom-bar-nobg text-center">	
+		<a href="" class="btn btn-primary btn-block" style="border-radius: 0;">确认支付</a>
+	</div>
+   
+</div>
+<div id="mask" class="cl"></div>
+<!-- -->
+<div id="slidePic" class="cl">
+  <div class="device">
+    <a class="arrow-left" href="#"></a> 
+    <a class="arrow-right" href="#"></a>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="../../img/slider1-1.png"> </div>
+        <div class="swiper-slide"> <img src="../../img/slider1-2.png"> </div>
+        <div class="swiper-slide">
+           <img src="../../img/slider1-1.png"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+    
+</div>
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+<script type="text/javascript" src="../../js/idangerous.swiper.min.js" ></script>
+ <script>
+ 	$(function(){
+ 		/*给每个input 添加对应的单数值*/
+ 		$(".set-num").each(function(){
+ 			var oHref=$(this).attr("data-href");
+ 			var oNum=parseFloat($(oHref).text().split("￥").join("")).toFixed("2");
+ 			$(this).attr("data-num",oNum);
+ 		});
+ 		
+ 		/*实现增加减少操作值*/
+ 		function getNumber(obj,type,num){
+ 			
+ 			if(obj.closest(".address-is").hasClass("address-selected")){
+ 		     	    var fShow=obj.closest(".set-num").attr("data-change");
+ 		     	    var fSub=parseFloat($(fShow).text().split("￥").join(""));
+ 		     	    if(type>0){
+ 		     	    	 $(fShow).text("￥"+(fSub-num).toFixed("2")+"");
+ 		     	    }
+ 		     	    else{
+ 		     	    	$(fShow).text("￥"+(fSub+num).toFixed("2")+"");
+ 		     	    }
+ 		           
+ 	 	    }
+ 			
+ 		}
+ 		/*数量控件的实现*/
+ 		$(".set-num").each(function(){
+ 			$(this).children("button").on("click",function(e){
+ 			e.stopPropagation();
+ 			e.preventDefault();
+ 			var oMax=30;
+ 			var oInput=$(this).closest(".set-num").children("input");//对应input
+ 			var oValue=parseInt(oInput.val());//对应input的值
+ 			var oAdd=$(this).closest(".set-num").children(".addition");//对应增加按钮的值
+ 			var oSub=$(this).closest(".set-num").children(".substraction");//对应减少按钮的值
+ 			var oSrc=$(this).closest(".set-num").attr("datasrc");//对应增加按钮的值
+ 			var oNum=0;
+ 			var oSingleNum=parseFloat($(this).closest(".set-num").attr("data-num"));
+ 			var oSrcNum=parseFloat($(oSrc).text().split("￥").join(""));
+ 			
+ 			if($(this).hasClass("addition")){//增加
+ 				if(oValue==oMax){
+ 					return;
+ 				}else{
+ 					oNum=oValue+1;
+ 					oInput.val(oNum);
+ 					var fNum=parseFloat(oSrcNum+oSingleNum);
+ 					
+ 					$(oSrc).text("￥"+fNum.toFixed("2")+"");
+ 					getNumber($(this),1,oSingleNum);
+ 				}
+ 				
+ 			}else{
+ 				
+ 				if(oValue==1){//减少
+ 					return;
+ 				}else{
+ 					oNum=oValue-1;
+ 			        oInput.val(oNum);
+ 			        var fNum=parseFloat(oSrcNum-oSingleNum);
+ 		     	    $(oSrc).text("￥"+fNum.toFixed("2")+"");
+ 		     	    getNumber($(this),0,oSingleNum);
+ 				}
+ 				
+ 			}
+ 		  });
+ 		});
+ 		
+ 		/*添加积分抵扣 start*/
+ 		$(".address-is").on("click",function(e){
+       	   e.preventDefault();
+       	   if($(this).hasClass("address-selected")){
+       	   	  $(this).removeClass("address-selected").children("img").attr("src","../../img/address_select_icon_nor.png");
+       	      $(this).children(".address-text").removeClass("text-primary");
+       	   }else{
+       	   	  $(this).addClass("address-selected").children("img").attr("src","../../img/address_select_icon_active.png");
+       	      $(this).children(".address-text").addClass("text-primary");
+       	   }
+       	   
+       	   if($(this).children("div").length>0){   
+       	   	  var oSrc=$(this).find(".set-num").attr("datasrc");
+       	      var oHref=$(this).find(".set-num").attr("data-href");
+       	      var oChange=$(this).find(".set-num").attr("data-change");
+       	      var oSrcNum=parseFloat($(oSrc).text().split("￥").join(""));
+       	      var oChangeNum=parseFloat($(oChange).text().split("￥").join(""));
+       	      if($(this).hasClass("address-selected")){
+       	      	$(this).find(".set-num").css({"display":"inline-block"});
+       	        $(oHref).css({"display":"inline-block"});
+       	        $(oChange).text("￥"+(oChangeNum-oSrcNum).toFixed("2")+"");
+       	      }else{
+       	      	$(this).find(".set-num").css({"display":"none"});
+       	        $(oHref).css({"display":"none"});
+       	        $(oChange).text("￥"+(oChangeNum+oSrcNum).toFixed("2")+"");
+       	      }
+       	      
+       	   	  
+       	   }
+       	  
+       });
+ 	   /*添加积分抵扣 end*/
+ 		
+ 	  /*图片放大 start*/
+       $(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			
+			$("#slidePic").modal({
+				    maskName:"#mask",
+				    targetObject:"#slidePic",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    getClose:true,
+				    getOverflow:true
+	       });
+	        
+		});
+		
+	    var screenWidth=document.body.scrollWidth;//屏幕的宽度
+		$("#slidePic .swiper-container").css({"width":screenWidth+'px'});
+		var mySwiper = new Swiper('.swiper-container',{
+             pagination: '.pagination',
+             loop:true,
+             grabCursor: true,
+             paginationClickable: true
+       });
+        $('.arrow-left').on('click', function(e){
+             e.preventDefault();
+             mySwiper.swipePrev();
+        });
+        $('.arrow-right').on('click', function(e){
+            e.preventDefault();
+            mySwiper.swipeNext();
+         });
+         
+         /*图片放大 end*/
+		
+ 	})
+ 	
+ 	 
+ 	
+ </script>
+ 
+	
+</body>
+</html>

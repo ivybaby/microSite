@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑纪念日</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">编辑</h1>
+        <a href="javascript:history.go(-1)" class="nav-right text-white">保存</a>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+         <!--form-group start -->
+        <div class="form-group">
+            
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>纪念日名称</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="" class="input text-warning" max="11" value="结婚日期" />
+                </div>
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row mui-btn"  id='demo2' data-options='{"type":"date","beginYear":2014,"endYear":2016}'>
+                <div class="col-sm-3">
+                    <label>日期</label>
+                </div>
+                <div class="col-sm-8" style="height: 48px;">
+                    <em class="input mui-btn-block text-warning" style="display: inline-block;padding:12px 5px;">2017-5-28</em>
+                </div>
+                <img src="../../img/more_icon.png" class="pull-right" style="width: 14px;margin: 12px 15px 0 0;" />
+            </div>
+            <!--input-group end -->
+        </div>
+        <small class="row-padding text-danger text-alert text-center"></small>
+        <!--form-group end -->
+    </form>
+    <!-- form end-->
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+ <script>
+ 	$(function(){
+        $(".edit-box .edit-group .edit-icon").on("click",function(e){
+        	$(this).closest(".edit-group").children(".edit-input").val("");
+        });
+ 	})
+ </script>
+ <script>
+			(function($) {
+				$.init();
+				var result = $('.mui-btn-block')[0];
+				var btns = $('.mui-btn');
+				var temp=0;
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						    temp++;
+							var optionsJson = this.getAttribute('data-options') || '{}';
+						    var options = JSON.parse(optionsJson);
+						    var id = this.getAttribute('id');
+						    var picker = new $.DtPicker(options);
+						    /*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.value 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+						    
+						   
+						       picker.show(function(rs) {
+							      result.innerText =rs.y.value+'-'+rs.m.value+'-'+rs.d.value;
+							      picker.dispose();
+							      temp=0;
+						        });
+					 	  
+						
+					}, false);
+				});
+				
+			})(mui);
+			
+</script>
+</body>
+</html>

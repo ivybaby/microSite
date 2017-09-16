@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑账号</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">编辑</h1>
+        <a href="javascript:history.go(-1)" class="nav-right text-white">保存</a>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+         <!--form-group start -->
+        <div class="form-group">
+            
+            <!--input-group start -->
+            <div class="input-group row" id="showUserPicker">
+                <div class="col-sm-3">
+                    <label>身份ID类型</label>
+                </div>
+                <div class="col-sm-8" style="height: 48px;padding: 12px 15px 0 5px;">
+                    <em class="text-warning" style="display: inline-block;" id="userResult"></em>
+                </div>
+                 <img src="../../img/more_icon.png" class="pull-right" style="width: 14px;margin: 12px 15px 0 0;" />
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row" >
+                <div class="col-sm-3">
+                    <label>ID地址</label>
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" placeholder="" class="input text-warning" max="11" value="杭州西溪软件园" />
+                </div>
+        
+            </div>
+            <!--input-group end -->
+        </div>
+        <small class="row-padding text-danger text-alert text-center"></small>
+        <!--form-group end -->
+    </form>
+    <!-- form end-->
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+ <script>
+ 	$(function(){
+        $(".edit-box .edit-group .edit-icon").on("click",function(e){
+        	$(this).closest(".edit-group").children(".edit-input").val("");
+        });
+ 	})
+ </script>
+ <script>
+			//选择性别
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//性别
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'telephone',
+						text: '手机号'
+					}, {
+						value: 'carnum',
+						text: '车牌号'
+					}, {
+						value: 'weixin',
+						text: '微信ID'
+					}, {
+						value: 'weibo',
+						text: '微博ID'
+					}, {
+						value: 'qq',
+						text: 'QQ'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0].text).split('"').join("");
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+				});
+			})(mui, document);
+			
+</script>
+</body>
+</html>

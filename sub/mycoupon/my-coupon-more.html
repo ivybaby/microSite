@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>优惠券详情</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">优惠券详情</h1>
+    </nav>
+    <!--nav end-->
+    
+    <!--form start-->
+    <form action="#" name="">
+      <div class="card-box">
+      	  <div class="row row-padding text-center card-box-img">
+      	  	  <img src="../../img/card_coupon_icon.jpg" width="270px" />
+      	  </div>
+      	  
+      	   <!-- list-group start-->
+        <ul class="list-group">
+            <!-- list-view start-->
+            <li class="list-view">
+                <a href="#">
+                    <label class="small">可用时间</label>
+                    <span class="small">2017/12/10-2018/12/10,周一至周日&nbsp;全天</span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="#" class="use-permit">
+                    <label class="small">使用限制</label>
+                    <span class="pull-right">
+                           <img src="../../img/more_icon.png" alt="more" style="width: 12px;" />
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <!-- list-group end-->
+      	  
+      </div>
+      
+       
+    </form>
+    <!--form end-->
+    
+    
+    <div class="row row-padding" style="margin-top: 20px;">
+        <button class="btn btn-block btn-primary btn-userCode" >立即使用</button>
+    </div>
+</div>
+
+<div id="mask" class="cl"></div>
+<!-- 使用限制 -->
+<div id="use-permit-infor" class="cl">
+    <h5 class="row">使用限制：</h5>
+    <p>lllallllalllaallalaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllallllalllaallalaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllallllalllaallalaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllallllalllaallalaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllallllalllaallalaaaaaaaaaaaaaaaaaaaaaaaaaaaaall</p>
+    <div class="row" style="margin-top: 20px; text-align: center;">
+    	 <a href="#" class="btn btn-primary btn-small text-center btn-block" style="width:85px !important; margin: 0 auto;">关闭</a>
+    </div>
+</div>
+
+<!-- 使用二维码 -->
+<div id="use-code" class="cl">
+    <div class="row text-center">
+    	<img src="../../img/two_dimension_code_icon.png" alt="二维码" class="use-code-img"/>
+    	<p>券码：<em style="font-weight: 700;">332&nbsp;221&nbsp;146&nbsp;221</em></p>
+    </div>
+    <!--
+    <img src="../img/cancel_icon.png"  class="close-icon" />-->
+</div>
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		$("#lightbox,#use-code").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+		});
+		$(".use-permit").on("click",function(e){
+			e.preventDefault();
+			$("#use-permit-infor").modal({
+				    maskName:"#mask",
+				    targetObject:"#use-permit-infor",
+				    maskShadow:true,
+				    actionBottom:true,
+				    actionCenter:true,
+				    getOverflow:true
+	        });
+	        $("#use-permit-infor a.btn").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();	
+ 		    })
+		});
+		$(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			$("#use-code").modal({
+				    maskName:"#mask",
+				    targetObject:"#use-code",
+				    maskShadow:true,
+				    actionBottom:true,
+				    actionCenter:true,
+				    getOverflow:true
+	        });
+	        $("#use-code a.btn").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();	
+ 		    })
+		});
+		
+ 		
+ 	})
+ </script>
+</body>
+</html>

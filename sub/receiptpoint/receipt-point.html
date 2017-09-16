@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>小票积分</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <script>
+      //图片上传预览    IE是用了滤镜。
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 90; 
+          var MAXHEIGHT = 90;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead onclick=$("#previewImg").click()>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                //img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight ){
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                
+                if( rateWidth > rateHeight ){
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else{
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    </script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">小票积分</h1>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+    	<div class="receipt-body">
+    		<div class="row receipt-img">
+    		    <div class="big-photo">
+                	<div id="preview">
+                        <img id="imghead" border="0" src="../../img/receipt.jpg" />
+                     </div>         
+                    <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                	<!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+    		</div>
+    		<!-- row start-->
+            <div class="row">
+                <input type="button" class="btn btn-block btn-primary" value="上传小票照片" onclick="$('#previewImg').click();" />
+            </div>
+            
+            <!-- row end-->
+            <div class="row service-regulation">
+            	<h5>使用规则：</h5>
+            	<ul>
+            	   <li>每次只能上传一张拍摄清晰的小票照片，且金额≥50元</li>
+            	   <li>积分仅限消费小票，刷卡单据无法积分；</li>
+            	   <li>请保证上传小票为本人消费，积分成功后的小票在 退货时需要扣除积分才能退货；</li>
+            	   <li>小票审核通过后，积分将在3-5个工作日内到账；</li>
+            	   <li>对于异常或虚假积分，本商场有权利冻结会员账号</li>
+            	   <li>积分和账号任何问题，可致电 400XXXXX 咨询</li>
+                </ul>
+            </div>
+           
+            
+    	</div>
+    </form>
+    <!-- bottom-bar start-->
+    <div class="bottom-bar bottom-bar-tab bottom-bar-nobg text-center">	
+		<a href="receipt-ponit-history.html" class="text-primary">历史记录</a>
+	</div>
+	<!-- bottom-bar end-->
+</div>
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+        	
+ 		
+ 	})
+ </script>
+</body>
+</html>

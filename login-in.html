@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>登陆</title>
+    <link  rel="stylesheet" href="css/reset.css">
+    <link  rel="stylesheet" href="css/siteStyle.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">登陆</h1>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="resetForm">
+        <!-- form-group start-->
+        <div class="form-group">
+            <!-- input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>用户名</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="请输入用户名" class="input" id="user_tel">
+                </div>
+            </div>
+            <!-- input-group end-->
+
+            <!-- input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>密码</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="默认密码为手机后六位" class="input" id="user_pwd">
+                </div>
+            </div>
+            <!-- input-group end-->
+
+        </div>
+        <!-- form-group start-->
+        <div class="row row-padding" >
+            <small class="pull-left text-danger text-show"></small>
+        </div>
+        <div class="row row-padding">
+            <a href="#" class="btn btn-block btn-primary text-center btn-login" >登陆</a>
+        </div>
+    </form>
+    <!-- form end-->
+    
+    
+</div>
+ <script type="text/javascript" src="js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		$(".btn-login").on("click",function(e){
+ 			e.preventDefault();
+ 			$(".form-group").login({
+ 			  userTel:"#user_tel",
+ 			  userPwd:"#user_pwd",
+ 			  textShow:".text-show"
+ 		    });
+ 		});
+ 		
+ 		
+ 	});
+ </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>包装详情</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    
+    <link rel="stylesheet" href="../../css/idangerous.swiper.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+ 
+</head>
+<body>
+<div id="" class="set-img">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">包装详情</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+    
+    
+    <!-- form start-->
+    <form action="#" name="" id="" >
+       
+      	<div class="address-list">
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small media-add-btn">
+                <div class="address-head">
+                	<label>订单号：20392933</label> <span class="pull-right">未包装</span>
+                </div>
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-3">
+       		              <img src="../../img/media_1.jpg" alt="media_list_photo" class="btn-userCode"/>
+       		            </div>
+       		            <div class="media-body col-sm-9 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">包装盒名称<span class="text-danger h4 pull-right">￥25</span></div>
+       			            <div class="inner-nbsp smaller media-height">
+       				               <label style="margin-right: 7px;">包装盒说明：<em >大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋</em></label>
+       			            </div>
+       			            <p class="row text-ellipsis smaller"><span class="">下单时间：2017-11-22&nbsp;14:20</span><span class="pull-right">数量：1</span></p>
+       		            </div>
+       	              </li>
+                    </ul>
+    				
+    			</div>
+    			
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    
+    	</div>
+     
+       <!-- box end-->
+       
+       <div class="row gift-pay small">
+       	   <h4 class="row-padding">支付方式</h4>
+       	   <ul>
+       	   	  <li>微信支付<span class="text-warning pull-right">￥203</span></li>
+       	   	  <li>积分抵扣<em>30</em>分<span class="text-warning pull-right">￥203</span></li>
+       	   </ul>
+       </div>
+       <div class="row gift-pay small">
+       	   <h4 class="row-padding">订单信息</h4>
+       	   <ul>
+       	   	  <li>订单号：<span class="text-warning pull-right">28348484</span></li>
+       	   	  <li>下单时间：<span class="text-warning pull-right">2017-11-3&nbsp;11:00</span></li>
+       	   	  <li>包装时间：<span class="text-warning pull-right">28348484</span></li>
+       	   	  <li>服务员：<span class="text-warning pull-right">贝贝罗</span></li>
+       	   </ul>
+       </div>
+    
+        
+    </form>
+    <!-- form end-->
+   
+</div>
+<div id="mask" class="cl"></div>
+<!-- -->
+<div id="slidePic" class="cl">
+  <div class="device">
+    <a class="arrow-left" href="#"></a> 
+    <a class="arrow-right" href="#"></a>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="../../img/slider1-1.png"> </div>
+        <div class="swiper-slide"> <img src="../../img/slider1-2.png"> </div>
+        <div class="swiper-slide">
+           <img src="../../img/slider1-1.png"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+    
+</div>
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+<script type="text/javascript" src="../../js/idangerous.swiper.min.js" ></script>
+ <script>
+ 	$(function(){
+ 	  
+       $(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			
+			$("#slidePic").modal({
+				    maskName:"#mask",
+				    targetObject:"#slidePic",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    getClose:true,
+				    getOverflow:true
+	       });
+	        
+		});
+		
+	    var screenWidth=document.body.scrollWidth;//屏幕的宽度
+		$("#slidePic .swiper-container").css({"width":screenWidth+'px'});
+		var mySwiper = new Swiper('.swiper-container',{
+             pagination: '.pagination',
+             loop:true,
+             grabCursor: true,
+             paginationClickable: true
+        })
+        $('.arrow-left').on('click', function(e){
+             e.preventDefault()
+             mySwiper.swipePrev()
+        })
+        $('.arrow-right').on('click', function(e){
+            e.preventDefault()
+            mySwiper.swipeNext()
+          })
+		
+ 	})
+ 	
+ 	 
+ 	
+ </script>
+ 
+	
+</body>
+</html>

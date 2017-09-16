@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>商铺</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="storeListIndex" class="head-height">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">商铺</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+   
+    <!-- form start-->
+    <form action="#" name="" id="" style="margin-top: 0;position: relative;">
+    <div>
+    
+      	<div class="slide-floor row">
+      		<div class="slide-floor-view text-warning row">
+      			<div class="slide-cell col-sm-4 text-center">
+      				楼层
+      				<a href="#floorNum"><img src="../../img/activity_slidedown_icon.png" datasrc="../../img/activity_slideup_icon.png" /></a>
+      		    </div>
+      		    <div class="slide-cell col-sm-4 text-center" style="border-right: 1px solid #dcdcdc;">
+      				业态
+      				<a href="#formatType"><img src="../../img/activity_slidedown_icon.png" datasrc="../../img/activity_slideup_icon.png" /></a>
+      		    </div>
+      		    <div class="slide-cell col-sm-4 text-center">
+      				智能排序
+      				<a href="#intelligentSort"><img src="../../img/activity_slidedown_icon.png" datasrc="../../img/activity_slideup_icon.png" /></a>
+      		    </div>
+      		</div>
+      		<div class="slide-floor-list text-warning">
+      			<div id="floorNum" class="split-kinds">
+      				<ul>
+      					<li class="row split-item split-active"><img src="../../img/address_select_icon_active.png" alt=""/>全部</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>一楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>二楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>三楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>四楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>五楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>六楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>七楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>八楼</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>九楼</li>
+      				</ul>
+      			</div>
+      			<div id="formatType" class="split-kinds">
+      				<ul>
+      					<li class="row split-item split-active"><img src="../../img/address_select_icon_active.png" alt=""/>全部</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>餐饮</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>服务</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>家居用品</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>百货</li>
+      				</ul>
+      			</div>
+      			
+      			<div id="intelligentSort" class="split-kinds">
+      				<ul>
+      					<li class="row split-item split-active"><img src="../../img/address_select_icon_active.png" alt=""/>默认排序</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>首字母A~Z</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>销量由高到低</li>
+      				</ul>
+      			</div>
+      			
+      		</div>
+      		
+      	</div>
+      	
+    	<ul class="media-list">
+       	<li class="media-view-cell">
+       	  <a href="shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small line-20">
+       				<li class="text-default">商铺名称<img src="../../img/sign_in_map.png" class="store-img pull-right" /> </li>
+       				<li class="text-ellipsis">业态:&nbsp;家居用品</li>
+       				<li class="text-ellipsis">楼层:&nbsp;<em class="text-primary">一楼</em></li>
+       				<li class="text-ellipsis cl">电话：&nbsp;<em class="text-primary">0571-125485</em><img src="../../img/activity_normal_icon.png" class="store-img click-like pull-right " datasrc="../../img/activity_collect_active_icon.png"  /></li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       		<li class="media-view-cell">
+       	  <a href="shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small line-20">
+       				<li class="text-default">商铺名称<img src="../../img/sign_in_map.png" class="store-img pull-right" /> </li>
+       				<li class="text-ellipsis">业态:&nbsp;家居用品</li>
+       				<li class="text-ellipsis">楼层:&nbsp;<em class="text-primary">一楼</em></li>
+       				<li class="text-ellipsis cl">电话：&nbsp;<em class="text-primary">0571-125485</em><img src="../../img/activity_normal_icon.png" class="store-img click-like pull-right " datasrc="../../img/activity_collect_active_icon.png"  /></li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       		<li class="media-view-cell">
+       	  <a href="shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small line-20">
+       				<li class="text-default">商铺名称<img src="../../img/sign_in_map.png" class="store-img pull-right" /> </li>
+       				<li class="text-ellipsis">业态:&nbsp;家居用品</li>
+       				<li class="text-ellipsis">楼层:&nbsp;<em class="text-primary">一楼</em></li>
+       				<li class="text-ellipsis cl">电话：&nbsp;<em class="text-primary">0571-125485</em><img src="../../img/activity_normal_icon.png" class="store-img click-like pull-right " datasrc="../../img/activity_collect_active_icon.png"  /></li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       		<li class="media-view-cell">
+       	  <a href="shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small line-20">
+       				<li class="text-default">商铺名称<img src="../../img/sign_in_map.png" class="store-img pull-right" /> </li>
+       				<li class="text-ellipsis">业态:&nbsp;家居用品</li>
+       				<li class="text-ellipsis">楼层:&nbsp;<em class="text-primary">一楼</em></li>
+       				<li class="text-ellipsis cl">电话：&nbsp;<em class="text-primary">0571-125485</em><img src="../../img/activity_normal_icon.png" class="store-img click-like pull-right " datasrc="../../img/activity_collect_active_icon.png"  /></li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       	
+       	
+       </ul>
+       
+       <div id="minmask"></div>
+     
+       
+       
+       <!-- box end-->
+       
+      </div>
+      
+    </div> 
+        
+    </form>
+    <!-- form end-->
+   <!-- <a href="../giftpackage/my-gift.html" class="text-center text-primary row" style="margin: 20px auto 10px;">我的礼品</a>    -->
+    
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+
+ <script>
+ 	$(function(){
+ 		
+ 		//收藏
+        $(".click-like").each(function(){
+			$(this).on("click",function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				
+				var $dataSrc=$(this).attr("datasrc");
+				$(this).attr({"datasrc":$(this).attr("src"),"src":$dataSrc});
+				/*if($dataSrc.indexOf("active")>0){
+					//tips提示信息
+        	        $.fn.tips({
+        		       tipInsert:"#storeListIndex form",
+        		       tipName:"#tips",
+        		       tipContent:"收藏成功！",
+        		       tipArea:".textarea",
+        		       notText:true
+        	        });
+				}
+				*/
+			});
+
+		});
+       
+        $(".bottom-bar .tab-item").hover(function(){
+        	var dataSrc=$(this).data("src");
+        	var oriSrc=$(this).find("img").attr("src");
+        	$(this).find("img").attr("src",dataSrc).end().data("src",oriSrc);
+        	$(this).css({"color":"#008ce6"});
+        },function(){
+        	var dataSrc=$(this).data("src");
+        	var oriSrc=$(this).find("img").attr("src");
+        	$(this).find("img").attr("src",dataSrc).end().data("src",oriSrc);
+        	$(this).css({"color":"#414141"});
+        });
+       
+		
+	
+		var screenHeight=document.body.scrollHeight;//屏幕的高度
+		var actHeight=screenHeight-$(".nav").outerHeight()-$(".spt-search").outerHeight();
+		$("#minmask").css({"height":actHeight+'px',"top":$(".nav").outerHeight()-$(".spt-search").outerHeight()+'px'});
+		
+		$(".slide-floor").getSlide({
+			slideFloor:".slide-floor",//外包
+			slideFloorView:".slide-floor-view",//楼层业态外包
+			slideFloorList:".slide-floor-list",//对应内容父级
+			slideCell:".slide-cell",//楼层业态分别对应
+			mask:"#minmask",
+			splitItem:".split-item",
+			splitActive:"split-active"
+		})
+		
+ 	})
+ </script>
+ 
+	
+</body>
+</html>

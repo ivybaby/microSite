@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的消息</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="../../js/clamp.min.js" ></script>
+</head>
+<body>
+<div id="myMessageIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">我的消息</h1>
+        <a href="#" class="nav-right"></a>
+    </nav>
+    <!--nav end-->
+    
+    <!--form start-->
+    <form action="#" name="">
+       <ul class="media-list">
+       	<li class="media-view-cell">
+       	  <a href="my-message-system-infor.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message"><img src="../../img/message_sys.png" alt="media_list_photo" />
+       			   <span class="media-badge"> </span>
+       			</div>
+       		   
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				系统通知
+       				<span class="pull-right text-warning">14:20</span>
+       			</div>
+       			<p class="row message-sentence" id="clampjs1">怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	<li class="media-view-cell">
+       	  <a href="my-message-message-infor.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message"><img src="../../img/my_message_icon.png" alt="media_list_photo" />
+       			    <span class="media-badge"></span>
+       			</div>
+       		    
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				消息通知
+       				<span class="pull-right text-warning">14:20</span>
+       			</div>
+       			<p class="row message-sentence" id="clampjs2">怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	<li class="media-view-cell">
+       	  <a href="my-message-splendid-recommend.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message"><img src="../../img/message_recommend_icon.png" alt="media_list_photo" /></div>
+       		   
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				精彩推荐
+       				<span class="pull-right text-warning">14:20</span>
+       			</div>
+       			<p class="row message-sentence" id="clampjs3">怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	
+     
+       	
+       </ul>
+       
+    </form>
+    <!--form end-->
+</div>
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+    var module1 = document.getElementById("clampjs1");
+    var module2=document.getElementById("clampjs2");
+    var module3=document.getElementById("clampjs3");
+    
+    $clamp(module1, {clamp: 2});
+    $clamp(module2, {clamp: 2});
+    $clamp(module3, {clamp: 2});
+    $(function(){
+    	$(".media-badge").each(function(){
+    		var $str=$(this).text().split(" ").join("");
+    		if($str.length==0){
+    			$(this).hide();
+    		}else{
+    			if($str>99){
+    				$(this).text("99+");
+    			}else{
+    				$(this).text($str);
+    			}
+    		}
+  
+    	});
+    });
+ 	
+ </script>
+</body>
+</html>

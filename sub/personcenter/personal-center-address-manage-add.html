@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>新增地址</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">新增地址</h1>
+       <!-- <a href="javascript:history.go(-1)" class="nav-right text-white">保存</a>-->
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+         <!--form-group start -->
+        <div class="form-group">
+            
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>收货人</label>
+                </div>
+                <div class="col-sm-9">
+                   <input type="text" placeholder="" class="input text-warning" max="11" value="" />
+                </div>
+               
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row" >
+                <div class="col-sm-3">
+                    <label>联系电话</label>
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" placeholder="" class="input text-warning" max="11" value="" />
+                </div>
+        
+            </div>
+            <!--input-group end -->
+            
+            <!--input-group start -->
+            <div class="input-group row" id="showCityPicker3">
+                <div class="col-sm-3">
+                    <label>所在地区</label>
+                </div>
+                <div class="col-sm-7" style="height: 48px;padding: 12px 15px 0 5px;">
+                    <em class="text-warning" style="display: inline-block;" id="cityResult3"></em>
+                </div>
+                 <img src="../../img/more_icon.png" class="pull-right" style="width: 14px;margin: 12px 15px 0 0;" />
+            </div>
+            <!--input-group end -->
+            
+            <!--input-group start -->
+            <div class="input-group row" id="showUserPicker">
+                <div class="col-sm-3">
+                    <label>街道</label>
+                </div>
+                <div class="col-sm-7" style="height: 48px;padding: 12px 15px 0 5px;">
+                    <em class="text-warning" style="display: inline-block;" id="userResult"></em>
+                </div>
+                 <img src="../../img/more_icon.png" class="pull-right" style="width: 14px;margin: 12px 15px 0 0;" />
+            </div>
+            <!--input-group end -->
+            
+            <!--input-group start -->
+            <div class="input-group row row-padding" id="showUserPicker">
+                <textarea  class="address-textarea text-warning">请填写详细的地址</textarea>
+            </div>
+            <!--input-group end -->
+        </div>
+        
+    </form>
+     <!--form-group start -->
+        <div class="form-group">
+            
+            <!--input-group start -->
+            <div class="input-group row" style="height: 48px;">
+                <div class="col-sm-3">
+                    <label>设为默认</label>
+                </div>
+                <div class="mui-switch mui-switch-mini mui-active pull-right" style="margin:9px 15px;">
+			          <div class="mui-switch-handle"></div>
+	            </div>   
+            </div>
+            <!--input-group end -->
+        </div>
+    
+     <div class="row row-padding add-btn-margin">
+                <input type="button" class="btn btn-block btn-primary" value="保存">
+     </div>
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+<script src="../../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+ <script>
+ 	$(function(){
+        $(".edit-box .edit-group .edit-icon").on("click",function(e){
+        	$(this).closest(".edit-group").children(".edit-input").val("");
+        });
+       
+        $(".address-textarea").bind({
+        	focus:function(){
+        	  var str=$(this).text().split(" ").join("");
+        	  if(str=='请填写详细的地址'){
+        		$(this).text("").removeClass("text-warning");
+        	  }
+            }
+        });
+ 	})
+ </script>
+ <script>
+			//选择性别
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//所在地区
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'telephone',
+						text: '街道1'
+					}, {
+						value: 'carnum',
+						text: '街道2'
+					}, {
+						value: 'weixin',
+						text: '街道3'
+					}, {
+						value: 'weibo',
+						text: '街道4'
+					}, {
+						value: 'qq',
+						text: '街道4'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0].text).split('"').join("");
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					var cityResult3 = doc.getElementById('cityResult3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.innerText = (items[0] || {}).text + (items[1] || {}).text + (items[2] || {}).text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+				});
+			})(mui, document);
+			
+</script>
+</body>
+</html>

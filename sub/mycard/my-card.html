@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>会员卡</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <style>
+    	#cardCode{ width: 300px; height:400px;padding-top:0;    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;}
+    	#cardCode .row a{ background: #FFFFFF; display: inline-block;padding: 10px;}
+
+    	#cardCode .img-second img{ width: 190px;height: 190px; margin: auto;}
+    	#cardCode .img-active img{ width: 100%;height: 140px;}
+    </style>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">我的会员卡</h1>
+    </nav>
+    <!-- nav end-->
+    
+    <div class="mycard-box row">
+    	<div class="mycard-box-img row">
+    		<div class="row">
+    			<div class="col-sm-3">
+    			    <img src="../../img/card_headpor_icon.png" class="head-por"  />
+    		    </div>
+    		    <div class="col-sm-7">
+    			    <h4>印象城黑卡会员</h4>
+    		    </div>
+    		    <div class="col-sm-2 card-code text-right btn-userCode">
+    			    <img src="../../img/card_code_icon.png"  />
+    		    </div>
+    		</div>
+    		
+    		<div class="row card-num">
+    		 	<div class="col-sm-3">
+    			    
+    		    </div>
+    		    <div class="col-sm-7">
+    			   <p>2685&nbsp;5562&nbsp;8511</p>
+    		    </div>
+    		 	
+    		</div>
+    	</div>
+    	
+    	<div class="row card-list">
+    		<figure class="col-sm-4">
+    			<p>等级</p>
+    			<figcaption ><a href="my-card-infor.html" class="text-primary">黑金卡</a></figcaption>
+    		</figure>
+    		<figure class="col-sm-4">
+    			<p>可用积分</p>
+    			<figcaption class="text-primary">1980</figcaption>
+    		</figure>
+    		<figure class="col-sm-4">
+    			<p>可用券</p>
+    			<figcaption class="text-primary">10</figcaption>
+    		</figure>
+    	</div>
+    </div>
+
+    <!-- form start-->
+    <form action="#" name="" id="" style="margin-top: 0;">
+        <!-- list-group start-->
+        <ul class="list-group" style="padding-bottom: 40px;">
+            <!-- list-view start -->
+            <li class="list-view">
+                <a href="my-card-use-detail.html" class="pull-right" >
+                	<div class="col-sm-2">
+                		<img class="ext-icon" src="../../img/card_use_icon.png"  />
+                	</div>
+                	<div class="col-sm-10">
+                		<label>使用明细</label>
+                        <span class="pull-right">
+                    	   <em id="userResult"></em>
+                           <img src="../../img/more_icon.png" alt="more" id=""/>
+                        </span>
+                	</div>
+                   
+                </a>
+            </li>
+            <!-- list-view end -->
+            
+            <!-- list-view start -->
+            <li class="list-view">
+                <a href="#" class="pull-right" >
+                	<div class="col-sm-2">
+                		<img  class="ext-icon" src="../../img/card_detail.png"  />
+                	</div>
+                	<div class="col-sm-10">
+                		<label>使用门店</label>
+                        <span class="pull-right">
+                    	   <em id="userResult">印象城</em>
+                          
+                        </span>
+                	</div>
+                   
+                </a>
+            </li>
+            <!-- list-view end -->
+            <!-- list-view start -->
+            <li class="list-view">
+                <a href="my-card-minicard.html" class="pull-right" >
+                	<div class="col-sm-2">
+                		<img  class="ext-icon" src="../../img/card_mincard.png"  />
+                	</div>
+                	<div class="col-sm-10">
+                		<label>子卡数</label>
+                        <span class="pull-right">
+                    	   <em id="userResult">3张</em>
+                           <img src="../../img/more_icon.png" alt="more" id=""/>
+                        </span>
+                	</div>
+                   
+                </a>
+            </li>
+            <!-- list-view end -->
+             
+        </ul>
+        <!-- list-group end-->
+
+       
+    </form>
+    <!-- form end-->
+</div>
+
+<div id="mask" class="cl"></div>
+<!-- 使用二维码 -->
+<div id="cardCode" class="cl">
+	
+	<div class="row">
+		<a href="#" class="card-code-img img-active cl"><img src="../../img/card_code_2.png" /></a>
+	</div>
+	<div class="row text-center">
+		<a href="#" class="card-code-img img-second cl" ><img src="../../img/card_code_1.png"  /></a>
+	</div>
+   <!-- <div class="row text-center card-img" id="code1">
+    	<img src="../../img/card_code_2.png" alt="二维码" class="use-code-img"/>
+    </div>
+    <div class="row text-center card-img" id="code2">
+    	<img src="../../img/card_code_1.png" alt="二维码" class="use-code-img"/>
+    </div>-->
+    <!--
+    <img src="../img/cancel_icon.png"  class="close-icon" />-->
+   <!-- <div class="row text-center cancel">
+    	<img src="../../img/cancel_icon.png" />
+   </div>-->
+</div>
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+ <script>
+ 	$(function(){
+ 		$(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			$("#cardCode").modal({
+				    maskName:"#mask",
+				    targetObject:"#cardCode",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    getOverflow:true
+	        });
+	       	/*  $(".card-img").hide();
+	        $($(".img-active").attr("href")).show();
+	        //二维码
+ 	   $("#cardCode .card-choose").children("a").on("click",function(e){
+ 		    	e.preventDefault();
+ 		    	$(".card-code-img").removeClass("img-active");
+ 		    	$(".card-img").hide();
+ 		    	$(this).addClass("img-active");
+ 		    	var ohref=$(this).attr("href");
+ 		    	$(ohref).show();
+ 		    })*/
+	        
+	        $("#cardCode .cancel").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();
+ 		    });
+ 		    
+ 		    
+		});
+       
+ 	})
+ </script>
+ 
+</body>
+</html>

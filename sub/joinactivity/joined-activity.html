@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我参与的活动</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="../../js/clamp.min.js" ></script>
+    <style>
+    	.over-word{line-height: 1.6em; font-size:13px;height: 20px; margin-bottom: 5px;}
+        .btn.btn-padding{margin-bottom: 4px;padding: 4px 4px;}
+        .pic-list{ width: 90px; margin-bottom: 0;padding: 0;}
+        .pic-list .pic-cell-mask{padding: 0;margin-top: -20px;height: 20px;}
+        .pic-list .pic-cell-mask label{text-align: center; display: inline-block; width: 100%; overflow: hidden;}
+    </style>
+</head>
+<body>
+<div id="" class="head-height">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">我参与的活动</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+  
+    <!-- form start-->
+    <form action="#" name="" id="">
+   
+      <ul class="media-list">
+       	<li class="media-view-cell">
+       	  <a href="#" class="cl row">
+       		<div class="col-sm-4">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="smaller text-ellipsis text-center">商铺活动</label>
+    		        </div>
+    	       </div>
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small">
+       				<li class="text-default over-word">活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</li>
+       				<li class="text-ellipsis smaller"><button class="btn btn-primary smaller btn-padding" datasrc="../mallactivity/mall-activity.html" >活动签到</button></li>
+       				<li class="text-ellipsis smaller">活动日期:2016.12.12-2017.2.12</li>
+       				<li class="text-ellipsis smaller">报名日期:2016.12.12-2017.2.12</li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+        <li class="media-view-cell">
+       	  <a href="#" class="cl row">
+       		<div class="col-sm-4">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="smaller text-ellipsis text-center">商铺活动</label>
+    		        </div>
+    	       </div>
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small">
+       				<li class="text-default over-word">活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</li>
+       				<li class="text-ellipsis smaller"><button class="btn smaller btn-padding" datasrc="../mallactivity/mall-activity.html" >活动结束</button></li>
+       				<li class="text-ellipsis smaller">活动日期:2016.12.12-2017.2.12</li>
+       				<li class="text-ellipsis smaller">报名日期:2016.12.12-2017.2.12</li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       	<li class="media-view-cell">
+       	  <a href="#" class="cl row">
+       		<div class="col-sm-4">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="smaller text-ellipsis text-center">商铺活动</label>
+    		        </div>
+    	       </div>
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small">
+       				<li class="text-default over-word">活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</li>
+       				<li class="text-ellipsis smaller"><button class="btn smaller btn-padding" datasrc="../mallactivity/mall-activity.html" >已签到</button></li>
+       				<li class="text-ellipsis smaller">活动日期:2016.12.12-2017.2.12</li>
+       				<li class="text-ellipsis smaller">报名日期:2016.12.12-2017.2.12</li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       </ul>
+      
+    </form>
+    
+	
+    
+</div>
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/TileHeadPic.js" ></script>
+ <script>
+ 	$(function(){
+ 		
+ 		$(".btn").on("click",function(e){
+ 			e.preventDefault();
+ 			$(this).ahrefTarget();
+ 		})
+ 		
+ 		/*省略号 start*/
+		$(".over-word").each(function(i){
+			var id="clampjs"+i+"";
+			$(this).attr({"id":id});
+			
+			$clamp(document.getElementById(id), {clamp: 1});
+		});
+		/*省略号 end*/
+ 		
+ 		
+ 	})
+ </script>
+ 
+	
+</body>
+</html>

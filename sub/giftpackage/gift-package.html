@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>礼品包装</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    
+    <link rel="stylesheet" href="../../css/idangerous.swiper.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+ 
+</head>
+<body>
+<div id="myGiftIndex">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">礼品包装</h1>
+    </nav>
+    <!-- nav end-->
+    
+    
+    <div class="row service-regulation row-padding">
+            	<h5 class="text-warning">包装盒购买说明：</h5>
+            	<ul>
+            	   <li>线上下单购买包装盒之后请在2天之内到总服务台领取包装盒</li>
+            	   <li>将购买单号出视给服务员，工作人员将为您进行礼品包装</li>
+            	   <li>包装盒一经售出，概不退还</li>
+            	   <li>包装盒购买订单2天内有效，过期作废</li>
+                </ul>
+    </div>
+ 
+   
+    <!-- form start-->
+    <form action="#" name="" id="" >
+       
+      	<div class="address-list">
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small media-add-btn">
+                
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-3">
+       		              <img src="../../img/media_1.jpg" alt="media_list_photo" class="btn-userCode"/>
+       		            </div>
+       		            <div class="media-body col-sm-9 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">包装盒名称</div>
+       			            <div class="inner-nbsp smaller media-height">
+       				               <label style="margin-right: 7px;">包装盒说明：<em >大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋</em></label>
+       			            </div>
+       			            <p class="row text-ellipsis smaller"><span class="text-danger h4">￥25</span><a href="gift-package-payfor.html" class="btn btn-primary pull-right small">立即购买</a></p>
+       		            </div>
+       	              </li>
+                    </ul>
+    				
+    			</div>
+    			
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell small media-add-btn">
+                
+    			<div class="address-body">
+    				<ul class="media-list">
+                    	<li class="media-view-cell">
+       		            <div class="col-sm-3">
+       		              <img src="../../img/media_1.jpg" alt="media_list_photo" class="btn-userCode"/>
+       		            </div>
+       		            <div class="media-body col-sm-9 text-warning padding-left-10">
+       			            <div class="row media-body-title text-default small">包装盒名称</div>
+       			            <div class="inner-nbsp smaller media-height">
+       				               <label style="margin-right: 7px;">包装盒说明：<em >大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋大号牛皮纸包装袋</em></label>
+       			            </div>
+       			            <p class="row text-ellipsis smaller"><span class="text-danger h4">￥25</span><a href="gift-package-payfor.html" class="btn btn-primary pull-right small">立即购买</a></p>
+       		            </div>
+       	              </li>
+                    </ul>
+    				
+    			</div>
+    			
+    		
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+   
+    	</div>
+     
+       <!-- box end-->
+    
+        
+    </form>
+    <!-- form end-->
+    
+    <div class="bottom-bar bottom-bar-tab bottom-bar-nobg text-center">	
+		<a href="gift-package-history.html" class="text-primary">包装历史</a>
+	</div>
+</div>
+<div id="mask" class="cl"></div>
+<!-- -->
+<div id="slidePic" class="cl">
+  <div class="device">
+    <a class="arrow-left" href="#"></a> 
+    <a class="arrow-right" href="#"></a>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="../../img/slider1-1.png"> </div>
+        <div class="swiper-slide"> <img src="../../img/slider1-2.png"> </div>
+        <div class="swiper-slide">
+           <img src="../../img/slider1-1.png"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+</div>
+
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+<script type="text/javascript" src="../../js/idangerous.swiper.min.js" ></script>
+ <script>
+ 	$(function(){
+ 	  
+       $(".btn-userCode").on("click",function(e){
+			e.preventDefault();
+			
+			$("#slidePic").modal({
+				    maskName:"#mask",
+				    targetObject:"#slidePic",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    getClose:true,
+				    getOverflow:true
+	       });
+	        
+		});
+		
+	    var screenWidth=document.body.scrollWidth;//屏幕的宽度
+		$("#slidePic .swiper-container").css({"width":screenWidth+'px'});
+		var mySwiper = new Swiper('.swiper-container',{
+             pagination: '.pagination',
+             loop:true,
+             grabCursor: true,
+             paginationClickable: true
+        })
+        $('.arrow-left').on('click', function(e){
+             e.preventDefault()
+             mySwiper.swipePrev()
+        })
+        $('.arrow-right').on('click', function(e){
+            e.preventDefault()
+            mySwiper.swipeNext()
+          })
+		
+ 	})
+ 	
+ 	 
+ 	
+ </script>
+ 
+	
+</body>
+</html>

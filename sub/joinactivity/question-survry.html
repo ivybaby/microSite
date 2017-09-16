@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>问卷调查</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+   <!-- <script type="text/javascript" src="../../js/clamp.min.js" ></script>-->
+    <style>
+    	 form > .row:last-child{margin-top: 0;}
+    	 .max-survry{margin-bottom: 10px;}
+        .pic-list{ width:100%; margin-bottom: 0;padding: 0;}
+        .pic-list>img{height: 200px; }
+        .pic-list .pic-cell-mask{text-align: center;padding: 0 10px;margin-top: -200px;height: 200px; background: url(../../img/mask_shadow.png) repeat;}
+        .pic-list .pic-cell-mask label{width: 100%; overflow: hidden;font-size: 18px;max-height: 200px; display: inline-block;}
+        
+    </style>
+</head>
+<body>
+<div id="" class="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">问卷调查</h1>
+        <a href="#" class="nav-right upload-icon" style="color: #FFFFFF;font-size: 22px;top:4px;">&bull;&bull;&bull;</a>
+    </nav>
+    <!-- nav end-->
+  
+    <!-- form start-->
+    <form action="#" name="" id="" style="padding-bottom: 20px;margin-top:0;">
+   
+          <!-- max-survry start -->
+       	  <a href="#" class="cl row max-survry">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="text-center pic-item-title">商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动</label>
+    		        </div>
+       		</div>
+       	  </a>
+       	  <!-- max-survry end -->
+       	  
+       	  <!-- max-survry start -->
+       	  <a href="#" class="cl row max-survry">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="text-center pic-item-title">商铺活动</label>
+    		        </div>
+       		</div>
+       	  </a>
+       	  <!-- max-survry end -->
+       	  
+       	  <!-- max-survry start -->
+       	  <a href="#" class="cl row max-survry">
+       			<div class="pic-list">
+    		        <img src="../../img/media_1.jpg" alt="media_list_photo"  />
+    		        <div class="pic-cell-mask">
+    			        <label class="text-center pic-item-title">商铺活动商商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动铺活动商铺活动商铺活动商铺活动商铺活动商铺活动商铺活动</label>
+    		        </div>
+       		</div>
+       	  </a>
+           <!-- max-survry end -->
+    </form>
+    
+	
+    
+</div>
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		
+ 		/*$(".btn").on("click",function(e){
+ 			e.preventDefault();
+ 			$(this).ahrefTarget();
+ 		})*/
+ 		
+ 		/*省略号 start*/
+		/*$(".over-word").each(function(i){
+			var id="clampjs"+i+"";
+			$(this).attr({"id":id});
+			$clamp(document.getElementById(id), {clamp: 1});
+		});*/
+		/*省略号 end*/
+ 		$(".max-survry").each(function(){
+ 			var $oList=$(this).children(".pic-list");
+ 			var $oMask=$(this).find(".pic-cell-mask");
+ 			var $oTitle=$(this).find(".pic-item-title");
+ 			
+ 			var pad=parseFloat(($oList.outerHeight()-$oTitle.outerHeight())/2).toFixed(2);
+ 			$oMask.css({"padding-top":pad+'px',"padding-bottom":pad+'px'});
+ 			
+ 		});
+ 		
+ 	})
+ </script>
+ 
+	
+</body>
+</html>

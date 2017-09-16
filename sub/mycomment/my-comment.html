@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的评论</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="../../js/clamp.min.js" ></script>
+    <style>
+       .over-word{line-height: 1.4em !important;}
+    </style>
+</head>
+<body>
+<div id="myCommentIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">我的评论</h1>
+        <a href="#" class="nav-right"></a>
+    </nav>
+    <!--nav end-->
+    
+    <!--form start-->
+    <form action="#" name="">
+       <ul class="media-list">
+       	<li class="media-view-cell">
+       	  <a href="../shoppingmall/shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message">
+       				<img src="../../img/media_1.jpg" class="media_list_head show-orient" />
+       			</div>
+       		   
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				商铺名称
+       				<span class="pull-right text-warning smaller">2016-12-30&nbsp;14:20</span>
+       			</div>
+       			<p class="row message-sentence small  over-word" >怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	<li class="media-view-cell">
+       	  <a href="../shoppingmall/shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message">
+       				<img src="../../img/media_1.jpg" class="media_list_head show-orient" />
+       			</div>
+       		    
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				商铺名称
+       				<span class="pull-right text-warning smaller">2016-11-30&nbsp;14:20</span>
+       			</div>
+       			<p class="row message-sentence small  over-word">怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	<li class="media-view-cell">
+       	  <a href="../shoppingmall/shopping-mall-store-more.html" class="cl row">
+       		<div class="col-sm-3">
+       			<div class="media-message">
+       				<img src="../../img/media_1.jpg" class="media_list_head show-orient" />
+       			</div>
+       		</div>
+       		<div class="media-body col-sm-9 text-warning">
+       			<div class="row media-body-title text-default">
+       				商铺名称
+       				<span class="pull-right text-warning smaller">2016-11-30&nbsp;14:20</span>
+       			</div>
+       			<p class="row message-sentence small  over-word" >怕我饿哦我平均每个服务万加盟费is破OK哦我偶尔接口佩服你iwpieoprkwokfoewow我破饿哦偶尔看破无法</p>
+       			<div class="row" style="margin-top: 5px;">
+       				<div class="col-sm-3 media-body-img">
+       					<img src="../../img/media_1.jpg" class="show-orient" />
+       				</div>
+       				<div class="col-sm-3 media-body-img">
+       					<img src="../../img/media_1.jpg" class="show-orient" />
+       				</div>
+       				<div class="col-sm-3 media-body-img">
+       					<img src="../../img/media_1.jpg" class="show-orient" />
+       				</div>
+       				<div class="col-sm-3 media-body-img">
+       					<img src="../../img/media_1.jpg" class="show-orient" />
+       				</div>
+       			</div>
+       		</div>
+       	  </a>
+       	</li>
+       	
+       	
+     
+       	
+       </ul>
+       
+    </form>
+    <!--form end-->
+</div>
+
+<div id="mask" class="cl"></div>
+<!-- -->
+<div id="showBigImg" class="cl">
+</div>
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+   
+    $(function(){
+    	
+    	/*省略号 start*/
+		$(".over-word").each(function(i){
+			var id="clampjs"+i+"";
+			$(this).attr({"id":id});
+			
+			$clamp(document.getElementById(id), {clamp: 2});
+		});
+		/*省略号 end*/
+		
+		/* 点击图片 start */
+		var screenHeight=document.body.scrollHeight;//屏幕的高度
+		var screenWidth=document.body.scrollWidth;//屏幕的宽度
+		
+		var $obj=$("#showBigImg");
+		var isOver=false;
+		
+        $(".show-orient").on("click",function(e){
+			e.preventDefault();
+		
+			var ohref=$(this).attr("src");
+			
+			$obj.append("<img src='"+ohref+"' />");
+			
+		
+			$obj.modal({
+				    maskName:"#mask",
+				    targetObject:"#showBigImg",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    doubleNum:true,
+				    getOverflow:true
+	        }); 
+	       
+	       $("#mask").on("click",function(){
+	       	   $("#showBigImg img").remove();
+	       });
+		});
+	   
+ 		
+		
+    	
+    });
+ 	
+ </script>
+</body>
+</html>

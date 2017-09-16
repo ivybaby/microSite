@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>楼层图</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+   
+</head>
+<body>
+<div id="shopMallMap" class="head-height">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">楼层图</h1>
+    </nav>
+    <!-- nav end-->
+    
+    <!-- choose-floor start -->
+    <div class="row choose-floor" style="width: 600px;">
+    
+       <div class="slide-floor row">
+      		<div class="slide-floor-view text-warning row">
+      			<div class="slide-cell col-sm-12" style="border: none;">
+      				楼层
+      				<a href="#floorNum"><img src="../../img/activity_slidedown_icon.png" datasrc="../../img/activity_slideup_icon.png" /></a>
+      		   </div>
+      		</div>
+      		<div class="slide-floor-list text-warning">
+      			<div id="floorNum" class="split-kinds">
+      				<ul>
+      					<li class="row split-item split-active"><img src="../../img/address_select_icon_active.png" alt=""/>全部</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>1</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>2</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>3</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>4</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>5</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>6</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>7</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>8</li>
+      					<li class="row split-item"><img src="../../img/address_select_icon_active.png" alt=""/>9</li>
+      				</ul>
+      			</div>
+      			
+      		</div>
+      		
+    </div>
+    
+    <div id="minmask"></div>
+    </div>
+    <!-- choose-floor start -->
+    
+    
+    <!-- form start-->
+    <!--<form action="#" name="" id="" style="margin-top: 0;" >
+    	
+    </form>-->
+    <!-- form end-->
+    
+    <div id="shopMallImg">
+    	<img src="../../img/mall_bg.jpg" class="width-100" />
+    </div>
+    
+    
+    <!-- bottom-bar start-->
+    <div class="bottom-bar bottom-bar-tab bottom-bar-map">
+    	<ul class="media-list">
+       	<li class="media-view-cell">
+       	  <a href="" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 text-warning">
+       			<ol class="row small line-20">
+       				<li class="text-default">商铺名称<img src="../../img/activity_normal_icon.png" class="store-img click-like pull-right " datasrc="../../img/activity_collect_active_icon.png"  /></li>
+       				<li class="text-ellipsis">业态:&nbsp;家居用品</li>
+       				<li class="text-ellipsis">楼层:&nbsp;<em class="text-primary">一楼</em></li>
+       				<li class="text-ellipsis cl"><span class="flag-rel smaller">标签</span></li>
+       			</ol>
+       		</div>
+       		
+       	  </a>
+       	</li>
+       		
+       </ul>
+	</div>
+	<!-- bottom-bar end-->
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+       //收藏
+        $(".click-like").each(function(){
+			$(this).on("click",function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				
+				var $dataSrc=$(this).attr("datasrc");
+				$(this).attr({"datasrc":$(this).attr("src"),"src":$dataSrc});
+				if($dataSrc.indexOf("active")>0){
+					//tips提示信息
+        	        $.fn.tips({
+        		       tipInsert:"#shopMallMap .choose-floor",
+        		       tipName:"#tips",
+        		       tipContent:"收藏成功！",
+        		       tipArea:".textarea",
+        		       notText:true
+        	        });
+				}
+				
+			});
+
+		});
+		
+		var screenHeight=document.body.scrollHeight;//屏幕的高度
+		var actHeight=screenHeight-$(".nav").outerHeight()-$(".spt-search").outerHeight();
+		$("#minmask").css({"height":actHeight+'px',"top":$(".nav").outerHeight()-$(".spt-search").outerHeight()+'px'});
+		
+		$(".slide-floor").getSlide({
+			slideFloor:".slide-floor",//外包
+			slideFloorView:".slide-floor-view",//楼层业态外包
+			slideFloorList:".slide-floor-list",//对应内容父级
+			slideCell:".slide-cell",//楼层业态分别对应
+			mask:"#minmask",
+			splitItem:".split-item",
+			splitActive:"split-active"
+		})
+ 	})
+ </script>
+</body>
+</html>

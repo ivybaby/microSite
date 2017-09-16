@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>礼品详情</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+   
+</head>
+<body>
+<div id="giftMoreIndex">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">礼品详情</h1>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="" style="position: relative;margin-top: 0;">
+    	<div class="row gift-list">
+    		<div class="row gift-img">
+    			<img src="../../img/bb.jpg"  alt="" />
+    		</div>
+    		<h5>礼品名称礼品名称礼品名称</h5>
+    		<p class="small">规格：1个<label class="pull-right">兑换积分：<em class="text-primary">800分</em></label></p>
+    		<div class="small"><label><img src="../../img/activity_normal_icon.png" class="click-like" datasrc="../../img/activity_collect_active_icon.png"  />我已收藏</label>
+    			<em class="pull-right">礼品类别</em>
+    		</div>
+    	</div>
+    	<div class="row gift-list">	
+    		<p class="small">领取地点<label class="pull-right">一楼服务台</label></p>
+    	</div>
+    	<div class="row gift-list">	
+    		<div class="col-sm-3">
+    			礼品详情
+    		</div>
+    		<div class="col-sm-9">
+    			 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+    		</div>
+    	</div>
+    </form>
+    <div class="row row-padding" style="margin-top: 20px;">
+    	<button class="btn btn-block btn-primary btn-userCode btn-href" datasrc="personal-center-address-manage-add.html">预约兑换</button>
+    </div>
+    
+    <p class="text-center text-danger smaller">已有143人兑换</p>
+    <div class="row">
+     	<ul class="text-center text-warning smaller">
+        	<li>兑换须知：</li>
+        	<li>1.预约成功后，请到 XXXX服务台领取</li>
+        	<li>2.预约有效期为3天，过期不领取将作废</li>
+        	<li>3.最终解释权归本商城所有</li>
+        </ul>
+    </div>
+  
+    
+</div>
+<div id="mask" class="cl"></div>
+<div id="deleteMerday" class="cl" style="width: 240px; max-width: 240px; height: 160px;">
+	<div class="row cl">
+		<span class="small">兑换数量：</span>
+        <div class="set-num cl pull-right text-center" datasrc="#num1" data-href=".singleNum">
+    		<button class="pull-left addition">+</button>
+    		<input type="number" class="pull-left" value="1" />
+    		<button class="pull-left substraction">-</button>
+        </div>
+	</div>
+	
+	<div class="row text-center append-worning" style="margin-top: 10px;">
+		积分数：<span class="text-danger" id="num1">1</span>
+	</div>
+   
+    <div class="row text-center" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-small btn-block pull-left deletebtn btn-smaller" style="width:80px;">确认兑换</a>
+         <a href="#" class="btn btn-small btn-block pull-right canclebtn btn-smaller" style="width:80px;">取消兑换</a>
+    </div>
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		//收藏
+        $(".click-like").each(function(){
+			$(this).on("click",function(e){
+				e.preventDefault();
+				var $dataSrc=$(this).attr("datasrc");
+				$(this).attr({"datasrc":$(this).attr("src"),"src":$dataSrc});
+				if($dataSrc.indexOf("active")>0){
+					//tips提示信息
+        	        $.fn.tips({
+        		       tipInsert:"#giftMoreIndex form",
+        		       tipName:"#tips",
+        		       tipContent:"收藏成功！",
+        		       tipArea:".textarea",
+        		       notText:true
+        	        });
+				}
+				
+			});
+
+		});
+		
+		/*弹出框*/
+		$("#deleteMerday").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+	   });
+	   $(".btn-userCode").on("click",function(e){
+	   	$(".append-worning").children("p").remove();
+	   	var $str=$(this).closest(".media-view-cell");
+	   	    e.preventDefault();//阻止默认触发事件
+			$("#deleteMerday").modal({
+				maskName:"#mask",
+				targetObject:"#deleteMerday",
+				maskShadow:true,
+				actionBottom:false,
+				actionCenter:true
+			});
+			if(parseInt($("#num1").text())<0||parseInt($("#num1").text())==0){
+				$(".append-worning").append("<p class='text-center text-danger'>您的积分不足！</p>");
+				$(".deletebtn").on("click",function(e){
+		           e.preventDefault();
+		           e.stopPropagation();
+	            });
+			}else{
+				$(".deletebtn").addClass("btn-primary");
+				$(".deletebtn").on("click",function(e){
+		           e.preventDefault();
+		           e.stopPropagation();
+		           $str.remove();
+		           $("#mask").click();
+	            });
+			}
+			
+			
+	       $(".canclebtn").on("click",function(e){
+	       	    e.preventDefault();
+	       	    $("#mask").click();
+	       	    
+	       });
+	   });
+	   
+	   /*数量控件的实现*/
+ 		$(".set-num").each(function(){
+ 			$(this).children("button").on("click",function(e){
+ 			e.stopPropagation();
+ 			e.preventDefault();
+ 			
+ 			var oInput=$(this).closest(".set-num").children("input");//对应input
+ 			var oValue=parseInt(oInput.val());//对应input的值
+ 			var oAdd=$(this).closest(".set-num").children(".addition");//对应增加按钮的值
+ 			var oSub=$(this).closest(".set-num").children(".substraction");//对应减少按钮的值
+ 			var oSrc=$(this).closest(".set-num").attr("datasrc");//对应增加按钮的值
+ 			var oMax=parseInt($(oSrc).text().split(" ").join(""));
+ 			var oMin=1;
+ 			var oNum=0;
+ 			
+ 			if($(this).hasClass("addition")){//增加
+ 				    $(".append-worning").children("p").remove();
+ 					oNum=oValue+1;
+ 					if(oNum>oMax){
+ 						$(".append-worning").append("<p class='text-center text-danger'>您已达到兑换上限</p>");
+ 					    return;
+ 					}else{
+ 						oInput.val(oNum);	
+ 					}
+ 		 
+ 			}else{
+ 				   $(".append-worning").children("p").remove();
+ 					oNum=oValue-1;
+ 					if(oNum<oMin){
+ 					    return;
+ 					}else{
+ 						oInput.val(oNum);	
+ 					}
+ 			 	
+ 			}
+ 		  });
+ 		});
+ 		
+		
+ 	})
+ </script>
+</body>
+</html>

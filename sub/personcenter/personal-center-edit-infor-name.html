@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+         <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">真实姓名</h1>
+      <!--  <a href="javascript:history.go(-1)" class="nav-right text-white"></a>-->
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+        <!-- edit-box start-->
+        <div class="edit-box">
+                <!--  start-->
+                <div class="edit-group edit-groups">
+                    <input type="text" placeholder="tony" class="edit-input" value="李" />
+                    <div  class="edit-icon" >
+                    	<img src="../../img/cancel_icon.png"  />
+                    </div>
+                </div>
+                <!--  end-->
+                 <!--  start-->
+                <div class="edit-group">
+                    <input type="text" placeholder="tony" class="edit-input" value="贝贝" />
+                    <div  class="edit-icon" >
+                    	<img src="../../img/cancel_icon.png"  />
+                    </div>
+                </div>
+                <!--  end-->
+          
+        </div>
+        <!-- edit-box end-->
+        
+        <div class="row row-padding add-btn-margin">
+                <input type="button" class="btn btn-block btn-primary" value="保存">
+        </div>
+    </form>
+    <!-- form end-->
+    
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+        $(".edit-box .edit-group .edit-icon").on("click",function(e){
+        	$(this).closest(".edit-group").children(".edit-input").val("");
+        });
+ 	})
+ </script>
+</body>
+</html>

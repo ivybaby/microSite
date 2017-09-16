@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>收货地址管理</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">收货地址管理</h1>
+        <a href="javascript:history.go(-1)" class="nav-right text-white"></a>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+    	<div class="address-list">
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell">
+    			
+    			<div class="address-body">
+    				<div class="row">
+    					<label>刘新强</label>
+    					<em class="pull-right">18029384820</em>
+    				</div>
+    				<p>
+    					浙江省杭州市西湖区五常软件园11幢2单元201
+    				</p>
+    				
+    			</div>
+    			<div class="address-footer">
+    				 <div class="col-sm-6 address-is address-selected">
+    				      <img src="../../img/address_select_icon_active.png" />
+    				      <em class="address-text text-primary">默认地址</em>
+    			     </div>
+    				 <span class="pull-right">
+    				 	<a href="personal-center-address-manage-add.html"><img src="../../img/address_edit_icon.png" />&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;
+    				 	<a href="#" class="addre-del"><img src="../../img/address_delete_icon.png" />&nbsp;删除</a>
+    				 </span>
+    			</div>
+    			
+    		</div>
+    		<!--  address-list-cell end -->
+    		
+    		<!--  address-list-cell start -->
+    		<div class="address-list-cell">
+    			
+    			<div class="address-body">
+    				<div class="row">
+    					<label>刘新强</label>
+    					<em class="pull-right">18029384820</em>
+    				</div>
+    				<p>
+    					浙江省杭州市西湖区五常软件园11幢2单元201
+    				</p>
+    				
+    			</div>
+    			<div class="address-footer">
+    				 <div class="col-sm-6 address-is">
+    				      <img src="../../img/address_select_icon_nor.png" />
+    				      <em class="address-text">默认地址</em>
+    			     </div>
+    				 <span class="pull-right">
+    				 	<a href="personal-center-address-manage-add.html"><img src="../../img/address_edit_icon.png" />&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;
+    				 	<a href="#" class="addre-del"><img src="../../img/address_delete_icon.png"  />&nbsp;删除</a>
+    				 </span>
+    			</div>
+    			
+    		</div>
+    		<!--  address-list-cell end -->
+    	</div>
+        
+    </form>
+    <!-- form end-->
+     <div class="row row-padding" style="margin-top: 20px;">
+        <button class="btn btn-block btn-primary btn-userCode btn-href" datasrc="personal-center-address-manage-add.html" >新增收货地址</button>
+    </div>
+</div>
+
+<div id="mask" class="cl"></div>
+<div id="deleteMerday" class="cl">
+    <h4 class="row text-center">是否删除该收货地址</h4>
+    <div class="row text-center" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-primary btn-small btn-block pull-left deletebtn" style="width:80px;">确定</a>
+         <a href="#" class="btn btn-small btn-block pull-right canclebtn" style="width:80px;">取消</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+
+ <script>
+ 	$(function(){
+       $(".address-footer .address-is").on("click",function(e){
+       	 e.preventDefault();
+       	 $(".address-is").removeClass("address-selected");
+       	 $(".address-is").children(".address-text").removeClass("text-primary");
+       	 $(".address-is").children("img").attr("src","../../img/address_select_icon_nor.png");
+       	 e.preventDefault();
+       	 $(this).addClass("address-selected").children("img").attr("src","../../img/address_select_icon_active.png");
+       	 $(this).children(".address-text").addClass("text-primary");
+       	 
+       });
+       
+       $("#deleteMerday").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+	   });
+	   $(".btn-href").on("click",function(e){
+		   e.preventDefault();
+		   $(this).ahrefTarget();
+	   });
+	   $(".addre-del").on("click",function(e){
+			e.preventDefault();
+			var $thisparent=$(this).closest(".address-list-cell");
+			
+			$("#deleteMerday").modal({
+				maskName:"#mask",
+				targetObject:"#deleteMerday",
+				maskShadow:true,
+				actionBottom:false,
+				actionCenter:true
+			});
+			$(".deletebtn").on("click",function(e){
+		        e.preventDefault();
+		        e.stopPropagation();
+		        $("#mask").click();
+		        $thisparent.remove();
+	       });
+	       $(".canclebtn").on("click",function(e){
+	       	    e.preventDefault();
+	       	    $("#mask").click();
+	       	    $thisparent.animate({marginLeft:'0px'});
+	       });
+
+	   });
+	   
+ 	})
+ </script>
+ 
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>个人资料</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">个人资料</h1>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="" id="">
+        <!-- list-group start-->
+        <ul class="list-group" style="padding-bottom: 40px;">
+            <!-- list-view start-->
+            <li class="list-view">
+                <a href="personl-center-edit-infor-portait.html">
+                    <label style="padding-top: 16px;">头像</label>
+                    <span class="pull-right">
+                    	   <img src="../../img/head_portrait_icon.png"  alt="头像" style="width: 55px;height: 55px;" />
+                           <img src="../../img/more_icon.png" alt="more" />
+                    </span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="personal-center-edit-infor-text.html">
+                    <label>昵称</label>
+                    <span class="pull-right">
+                    	 西瓜
+                        <img src="../../img/more_icon.png" alt="more" />
+                    </span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="personal-center-edit-infor-name.html">
+                    <label>真实姓名</label>
+                    <span class="pull-right">
+                    	 李倩倩
+                        <img src="../../img/more_icon.png" alt="more" />
+                    </span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="personal-center-edit-infor-sex.html" class="pull-right">
+                    <label>性别</label>
+                    <span class="pull-right">
+                    	<em>女</em>
+                        <img src="../../img/more_icon.png" alt="more" id=""/>
+                    </span>
+                </a>
+            </li>
+              <li class="list-view">
+                <a href="#" id='demo2' data-options='{"type":"date","beginYear":2014,"endYear":2016}' class="mui-btn" >
+                    <label>出生日期</label>
+                    <span class="pull-right">
+                    	<span class="mui-btn-block">1993-03-20</span>
+                        <img src="../../img/more_icon.png" alt="more" />
+                    </span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="personal-center-edit-infor-constellation.html" class="pull-right">
+                    <label>星座</label>
+                    <span class="pull-right" >
+                    	<span>双子座</span>
+                        <img src="../../img/more_icon.png" alt="more" id=""/>
+                    </span>
+                </a>
+            </li>
+             <li class="list-view">
+                <a href="personal-center-edit-infor-sex-ori.html" class="pull-right" >
+                    <label>性取向</label>
+                    <span class="pull-right">
+                    	<span>异性</span>
+                        <img src="../../img/more_icon.png" alt="more" id=""/>
+                    </span>
+                </a>
+            </li>
+             <li class="list-view">
+                <a href="personal-center-edit-infor-nation.html" class="pull-right">
+                    <label>民族</label>
+                    <span class="pull-right">
+                    	汉族
+                        <img src="../../img/more_icon.png" alt="more" id=""/>
+                    </span>
+                </a>
+            </li>
+             <li class="list-view">
+                <a href="personal-center-edit-infor-country.html" class="pull-right">
+                    <label>国别</label>
+                    <span class="pull-right">
+                    	中国
+                        <img src="../../img/more_icon.png" alt="more" id=""/>
+                    </span>
+                </a>
+            </li>
+            <li class="list-view">
+                <a href="personal-center-edit-infor-hobby.html" class="pull-right">
+                    <label class="col-sm-2">爱好</label>
+                    <span class="col-sm-10 pull-right text-right list-view-cell-left">
+                    	<img src="../../img/more_icon.png" alt="more" id="" class="cell-icon"  class="pull-right" />
+                    	<em class="cell-flag">snjfnefneiojfmoskdodck房snjfnefneiojfmoskdodck房间诶哦见覅v位居IEsnjfnefneiojfmoskdodck房间诶哦见覅v位居IE间诶哦见覅v位居IE</em>   
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- list-group end-->
+
+       
+    </form>
+    <!-- form end-->
+</div>
+
+
+ <script type="text/javascript" src="../../js/normal-js.js" ></script>
+ <script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+ <script>
+ 	$(function(){
+       
+ 	})
+ </script>
+ <script>
+			(function($) {
+				$.init();
+				var result = $('.mui-btn-block')[0];
+				var btns = $('.mui-btn');
+				var temp=0;
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						    temp++;
+							var optionsJson = this.getAttribute('data-options') || '{}';
+						    var options = JSON.parse(optionsJson);
+						    var id = this.getAttribute('id');
+						    var picker = new $.DtPicker(options);
+						    /*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.value 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+						    
+						   
+						       picker.show(function(rs) {
+							      result.innerText =rs.y.value+'-'+rs.m.value+'-'+rs.d.value;
+							      picker.dispose();
+							      temp=0;
+						        });
+					 	  
+						
+					}, false);
+				});
+				
+			})(mui);
+			//选择性别
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//性别
+					/*var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'yes',
+						text: '男'
+					}, {
+						value: 'no',
+						text: '女'
+					}, {
+						value: 'all',
+						text: '未知'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0].text).split('"').join("");
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);*/
+					
+					//星座
+					/*var constellationPicker = new $.PopPicker();
+					constellationPicker.setData([{
+						value: 'Aries',
+						text: '白羊座'
+					}, {
+						value: 'Taurus',
+						text: '金牛座'
+					}, {
+						value: 'Gemini',
+						text: '双子座'
+					},{
+						value: 'Cancer',
+						text: '巨蟹座'
+					}, {
+						value: 'Leo',
+						text: '狮子座'
+					}, {
+						value: 'Virgo',
+						text: '处女座'
+					},{
+						value: 'Libra',
+						text: '天秤座'
+					}, {
+						value: 'Scorpio',
+						text: '天蝎座'
+					}, {
+						value: 'Sagittarius',
+						text: '射手座'
+					},{
+						value: 'Capricorn',
+						text: '摩羯座'
+					}, {
+						value: 'Aquarius',
+						text: '水瓶座'
+					}, {
+						value: 'Pisces',
+						text: '双鱼座'
+					}]);
+					var showUserPickerButton = doc.getElementById('showConstellationResultPicker');
+					var constellationResult = doc.getElementById('constellationResultResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						constellationPicker.show(function(items) {
+							constellationResult.innerText = JSON.stringify(items[0].text).split('"').join("");
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);*/
+					
+					//性取向
+					/*var sexualPicker = new $.PopPicker();
+					sexualPicker.setData([{
+						value: 'oppositSex',
+						text: '异性'
+					}, {
+						value: 'sameSex',
+						text: '同性'
+					}, {
+						value: 'bisexual',
+						text: '双性'
+					}, {
+						value: 'asexual',
+						text: '无性'
+					}]);
+					var showSexualPickerButton = doc.getElementById('showSexualPickerButton');
+					var sexualResult = doc.getElementById('sexualResult');
+					showSexualPickerButton.addEventListener('tap', function(event) {
+						sexualPicker.show(function(items) {
+							sexualResult.innerText = JSON.stringify(items[0].text).split('"').join("");
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);*/
+					
+				});
+			})(mui, document);
+</script>
+</body>
+</html>

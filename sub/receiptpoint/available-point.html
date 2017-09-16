@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>积分明细</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="pointDetailIndex">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">积分明细</h1>
+    </nav>
+    <!-- nav end-->
+    
+    <div class="mycard-box row">
+    	<div class="row fix-box">
+    		<div class="point-cir">
+    			<h5 class="text-white small">可用积分</h5>
+    			<h5 class="text-white small">903837</h5>
+    		</div>
+    		<a href="#"><img src="../../img/point_blue_icon.png" class="point-fix" /></a> 
+    	</div>
+    	
+    	<div class="row card-list">
+  
+    		<figure class="col-sm-6 smaller">
+    			<p>本年新增积分</p>
+    			<figcaption class="text-primary">18373分</figcaption>
+    		</figure>
+    		<figure class="col-sm-6 smaller">
+    			<p>即将过期积分(2017/10/21)</p>
+    			<figcaption class="text-primary">1000分</figcaption>
+    		</figure>
+    	</div>
+    </div>
+
+    <!-- form start-->
+    <form action="#" name="" id="" style="margin-top: 0;">
+        <!-- list-group start-->
+        <ul class="list-group">
+            <!-- list-view start -->
+            <li class="list-view">
+                <a href="#" class="pull-right btn-primary" >
+                	<div class="col-sm-1">
+                		<img class="ext-icon" src="../../img/point-gift.png"  />
+                	</div>
+                	<div class="col-sm-11">
+                		<label class="text-white small">积分商城</label>
+                        <span class="pull-right">
+                    	   <em id="userResult"></em>
+                           <img src="../../img/point_more_icon.png" alt="more" id=""/>
+                        </span>
+                	</div>
+                   
+                </a>
+            </li>
+            <!-- list-view end -->
+           
+        </ul>
+        <!-- list-group end-->
+        
+        <!-- point-list start -->
+        <div class="point-list">
+        	<div class="point-head">
+        		<p class="small text-white">2017-12</p>
+        	</div>
+        	<div class="point-body">
+        		<ul class="row">
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<span class="text-primary mark-point">+10</span>
+        				</div>
+        				
+        			</li>
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<p class="text-primary mark-point">+10</p>
+        				</div>
+        				
+        			</li>
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<p class="text-danger mark-point">-10</p>
+        				</div>
+        				
+        			</li>
+        		</ul>
+        	</div>
+        	
+        </div>
+        <!-- point-list end -->
+        
+        <!-- point-list start -->
+        <div class="point-list">
+        	<div class="point-head">
+        		<p class="small text-white">2017-11</p>
+        	</div>
+        	<div class="point-body">
+        		<ul class="row">
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<span class="text-primary mark-point">+10</span>
+        				</div>
+        				
+        			</li>
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<p class="text-primary mark-point">+10</p>
+        				</div>
+        				
+        			</li>
+        			<li class="cl">
+        				<div class="col-sm-10">
+        					<p class="small">消费赠送</p>
+        				    <p class="small">2015-12-04 17:00</p>
+        				</div>
+        				<div class="col-sm-2">
+        					<p class="text-danger mark-point">-10</p>
+        				</div>
+        				
+        			</li>
+        		</ul>
+        	</div>
+        	
+        </div>
+        <!-- point-list end -->
+       
+    </form>
+    <!-- form end-->
+</div>
+
+<div id="mask" class="cl"></div>
+<!--详情 -->
+<div id="mask-inner" class="cl">
+    <div class="row mask-img mask-out">
+    	<h5 class="small">如何获取积分</h5>
+    	<ul>
+    		<li>上传购物小票可获得积分</li>
+    		<li>签到可获得积分</li>
+    		<li>收藏与关注商铺可获得积分</li>
+    		<li>转发商铺及活动课获得积分</li>
+    		<li>转发获得二次的可获得双倍积分</li>
+    		<li>积分商城兑换礼品</li>
+    		<li>积分抵扣停车费</li>
+    		<li>积分抵扣包装盒支付</li>
+    	</ul>
+    </div>
+    <div class="row text-center cancel">
+    	<img src="../../img/cancle_blue_icon.png"  />
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="../../js/dtpicker/mui.picker.min.js"></script>
+ <script>
+ 	$(function(){
+ 		$(".point-fix").on("click",function(e){
+			e.preventDefault();
+			$("#mask-inner").modal({
+				    maskName:"#mask",
+				    targetObject:"#mask-inner",
+				    maskShadow:true,
+				    actionBottom:false,
+				    actionCenter:true,
+				    getClose:true
+	       });
+	        //二维码
+	        $("#mask-inner .cancel").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();
+ 		    });
+ 		    
+ 		    
+		});
+       
+ 	})
+ </script>
+ 
+</body>
+</html>

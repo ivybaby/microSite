@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>账号管理</title>
+    <link  rel="stylesheet" href="../../css/reset.css">
+    <link  rel="stylesheet" href="../../css/siteStyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+
+</head>
+<body>
+<div id="merdayIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">账号管理</h1>
+    </nav>
+    <!--nav end-->
+    
+    <!--form start-->
+    <form action="#" name="">
+
+      <div id="daySwipe">
+      	<!-- swipe-group start-->
+        <ul class="swipe-group">
+            <!-- list-view start-->
+            <li class="swipe-view left">
+                <a href="#">
+                    <label>手机号</label>
+                    <span class="pull-right">2010年10月21日</span>  
+                </a>
+                <div class="cl swipe-left">
+                	<button class="swipe-btn swipe-btn-active btn-href" datasrc="personal-center-account-manage-edit.html">编辑</button></a>
+                	<button class="swipe-btn delete">删除</button>
+                </div>
+            </li>
+            <li class="swipe-view left">
+                <a href="#" >
+                    <label>微信</label>
+                    <span class="pull-right">
+                         2010年10月21日
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <!-- swipe-group end-->
+      	  
+      </div>
+      
+       
+    </form>
+    <!--form end-->
+    
+    
+    <div class="row row-padding" style="margin-top: 20px;">
+        <button class="btn btn-block btn-primary btn-userCode btn-href" datasrc="personal-center-account-manage-add.html" >新增身份ID</button>
+    </div>
+</div>
+
+<div id="mask" class="cl"></div>
+<div id="deleteMerday" class="cl">
+    <h4 class="row text-center">是否确定删除该账号信息</h4>
+    <div class="row text-center" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-primary btn-small btn-block pull-left deletebtn" style="width:80px;">确定</a>
+         <a href="#" class="btn btn-small btn-block pull-right canclebtn" style="width:80px;">取消</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../js/normal-js.js" ></script>
+
+<script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(function(){
+
+    var screenWidth=document.body.scrollWidth;//屏幕的宽度
+    
+    $(".swipe-group").css({"width":screenWidth+'px'});
+    $(".swipe-view").css({"width":screenWidth+$(".swipe-group .swipe-left").outerWidth()+'px'});
+    $(".swipe-view a").css({"width":screenWidth+'px'});
+    
+    $("#deleteMerday").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+	});
+	$(".btn-href").on("click",function(e){
+		e.preventDefault();
+		$(this).ahrefTarget();
+	})
+	
+});
+ 	
+ 	
+ 
+</script>
+<script>
+	$(document).on('pagecreate',function(){
+        $('#daySwipe .left').on('swipeleft',function(){
+        	
+            $(this).animate({marginLeft:'-120px'});
+            $(this.parentNode).siblings().find('.left').animate({marginLeft:'0px'});
+        });
+        $('#daySwipe .left').on('swiperight',function(){
+            $(this).animate({marginLeft:'0px'});
+        });
+        $('#daySwipe .delete').on('tap',function(e){
+            var $thisparent=$(this.parentNode).closest(".swipe-view");
+            e.preventDefault();//阻止默认触发事件
+			e.stopPropagation();//防止触发冒泡
+			$("#deleteMerday").modal({
+				maskName:"#mask",
+				targetObject:"#deleteMerday",
+				maskShadow:true,
+				actionBottom:false,
+				actionCenter:true
+			});
+			$(".deletebtn").on("click",function(e){
+		        e.preventDefault();
+		        e.stopPropagation();
+		        $("#mask").click();
+		        $thisparent.remove();
+	       });
+	       $(".canclebtn").on("click",function(e){
+	       	    e.preventDefault();
+	       	    $("#mask").click();
+	       	    $thisparent.animate({marginLeft:'0px'});
+	       });
+
+        });
+        
+        $(".ui-loader").hide();
+    });	
+</script>
+</body>
+</html>
